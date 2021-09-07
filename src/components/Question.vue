@@ -1,8 +1,14 @@
 <template>
-  <div class="question">
-    <h2>Question:</h2>
-    <div class="quest">{{ question }}</div>
-  </div>
+	<div class="question">
+		<!-- <h2>Question:</h2> -->
+		<b-container>
+			<b-row>
+				<b-col>
+					<div class="block">{{ question }}</div>
+				</b-col>
+			</b-row>
+		</b-container>
+	</div>
 </template>
 
 <script>

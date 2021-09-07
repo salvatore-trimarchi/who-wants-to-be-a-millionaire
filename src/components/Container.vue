@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1>{{ containerMsg }}</h1>
+		<h1 class="title">{{ containerMsg }}</h1>
 		<Question :question="randQuestionDisplay" />
 		<Answers :answers="randAnswerDisplay" />
 	</div>
@@ -21,29 +21,28 @@ export default {
 	},
 	data() {
 		return {
-			randQuestionDisplay: null,
-			randAnswerDisplay: [],
+		randQuestionDisplay: null,
+		randAnswerDisplay: [],
 		};
 	},
 	methods: {
 		getRndQuestion() {
-			let wl = window.location;
-			this.axios
-				.get(wl.protocol+'//'+wl.host+wl.pathname+'api/qalist.json',{
-				})
-				.then((resp)=>{
-					// correct answer is always the first in answer array
-					console.log('resp.data =',resp.data);
-					let N = resp.data.length;
-					let randQuestNum = Math.floor(Math.random() * (N - 0) + 0);
-					this.randQuestionDisplay = resp.data[randQuestNum].question;
-					this.randAnswerDisplay = resp.data[randQuestNum].answers;
-					this.shuffle(this.randAnswerDisplay);
-				});
+		let wl = window.location;
+		this.axios
+			.get(wl.protocol + "//" + wl.host + wl.pathname + "api/qalist.json", {})
+			.then((resp) => {
+			// correct answer is always the first in answer array
+			console.log("resp.data =", resp.data);
+			let N = resp.data.length;
+			let randQuestNum = Math.floor(Math.random() * (N - 0) + 0);
+			this.randQuestionDisplay = resp.data[randQuestNum].question;
+			this.randAnswerDisplay = resp.data[randQuestNum].answers;
+			this.shuffle(this.randAnswerDisplay);
+			});
 		},
 		shuffle(arr) {
-			arr.sort(() => Math.random() - 0.5);
-		}
+		arr.sort(() => Math.random() - 0.5);
+		},
 	},
 	computed: {},
 	created() {},
@@ -55,5 +54,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-//
+	.title {
+		padding: 30px;
+	}
 </style>

@@ -1,42 +1,35 @@
 <template>
-  <div class="answers">
-    <h2>Answers:</h2>
-    <div class="ans_list">
-      <div class="ans_item" v-for="answer in answers" :key="answer">
-        {{ answer }}
-      </div>
-    </div>
-  </div>
+	<div class="answers">
+		<!-- <h2>Answers:</h2> -->
+		<b-container>
+			<b-row class="ans_list">
+				<b-col class="ans_item" v-for="(answer,index) in answers" :key="answer" sm="6">
+					<div class="block">{{listHead[index]}}. {{ answer }}</div>
+				</b-col>
+			</b-row>
+		</b-container>
+	</div>
 </template>
 
 <script>
 export default {
-  name: "Answers",
-  props: {
-    answers: Array,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  computed: {},
-  created() {},
-  mounted() {},
-};
+	name: "Answers",
+	props: {
+		answers: Array,
+	},
+	data() {
+		return {
+			listHead: ['A','B','C','D']
+		};
+	},
+	methods: {},
+	computed: {},
+	created() {},
+	mounted() {},
+	};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.answers {
-	.ans_list {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		border: 1px solid red;
-		.ans_item {
-			width: 45%;
-			border: 1px solid red;
-	  }
-	}
-}
+//
 </style>
