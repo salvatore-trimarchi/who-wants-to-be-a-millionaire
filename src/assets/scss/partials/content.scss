@@ -4,7 +4,7 @@
  */
 
 .home {
-	border: 1px solid red;
+	// border: 1px solid red;
 	height: 100vh;
 	.header {
 		@include flex-row-cc;
@@ -15,7 +15,7 @@
 		}
 	}
 	.qa_container {
-		border: 1px solid red;
+		// border: 1px solid red;
 		@include flex-row-cc;
 		height: calc(100% - 280px);
 		// padding: 25px;
@@ -23,7 +23,7 @@
 			padding: 20px;
 		}
 		.qa_box {
-			border: 1px solid red;		
+			// border: 1px solid red;		
 			width: 80%;
 			max-width: 1000px;
 			.qa_block {

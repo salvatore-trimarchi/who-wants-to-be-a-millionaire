@@ -30,8 +30,40 @@ export default {
 	},
 	data() {
 		return {
-		randQuestionDisplay: null,
-		randAnswerDisplay: [],
+			randQuestionDisplay: null,
+			randAnswerDisplay: [],
+			arrayShuffleTestCount: {
+				'1234': 0,
+				'1243': 0,
+				'1324': 0,
+				'1342': 0,
+				'1423': 0,
+				'1432': 0,
+				'2134': 0,
+				'2143': 0,
+				'2314': 0,
+				'2341': 0,
+				'2413': 0,
+				'2431': 0,
+				'3124': 0,
+				'3142': 0,
+				'3214': 0,
+				'3241': 0,
+				'3412': 0,
+				'3421': 0,
+				'4123': 0,
+				'4132': 0,
+				'4213': 0,
+				'4231': 0,
+				'4312': 0,
+				'4321': 0,				
+				// '123': 0,
+				// '132': 0,
+				// '213': 0,
+				// '231': 0,
+				// '321': 0,
+				// '312': 0
+			},
 		};
 	},
 	methods: {
@@ -46,17 +78,35 @@ export default {
 			let randQuestNum = Math.floor(Math.random() * (N - 0) + 0);
 			this.randQuestionDisplay = resp.data[randQuestNum].question;
 			this.randAnswerDisplay = resp.data[randQuestNum].answers;
-			this.shuffle(this.randAnswerDisplay);
+			this.arrayShuffle(this.randAnswerDisplay);
 			});
 		},
-		shuffle(arr) {
-		arr.sort(() => Math.random() - 0.5);
+		arrayShuffle(arr) {
+			// ////////////////////////////////////////////////////
+			// uneven distribution depending on js engine (sort() goes mad)
+			// arr.sort(() => Math.random() - 0.5);
+			// ////////////////////////////////////////////////////
+			// better way
+			for (let i = arr.length-1; i>0; i--) {
+				let j = Math.floor(Math.random()*(i+1)); // random index from 0 to i
+    			[arr[i],arr[j]] = [arr[j],arr[i]]; // swap i-j elements 
+			}
+			// ////////////////////////////////////////////////////
+		},
+		arrayShuffleTest() {
+			for (let i = 0; i < 10000000; i++) {
+				// let array = [1,2,3];
+				let array = [1,2,3,4];
+				this.arrayShuffle(array);
+				this.arrayShuffleTestCount[array.join('')]++;
+			}
 		},
 	},
 	computed: {},
 	created() {},
 	mounted() {
 		this.getRndQuestion();
+		// this.arrayShuffleTest();
 	},
 };
 
