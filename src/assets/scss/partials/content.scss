@@ -1,0 +1,42 @@
+/**********************************
+ * CONTENT
+ * structure
+ */
+
+.home {
+	border: 1px solid red;
+	height: 100vh;
+	.header {
+		@include flex-row-cc;
+		height: 280px;
+		background-color: $blue1;
+		img {
+			width: 200px;
+		}
+	}
+	.qa_container {
+		border: 1px solid red;
+		@include flex-row-cc;
+		height: calc(100% - 280px);
+		// padding: 25px;
+		.title {
+			padding: 20px;
+		}
+		.qa_box {
+			border: 1px solid red;		
+			width: 80%;
+			max-width: 1000px;
+			.qa_block {
+				margin: 10px 0;
+				padding: 10px;
+				border: 1px solid $white;
+				border-radius: 25px;
+			}
+		}
+	}
+}
+
+
+// .container, .question, .answers {
+// 	border: 1px solid red;
+// }

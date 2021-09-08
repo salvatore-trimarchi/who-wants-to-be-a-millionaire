@@ -1,0 +1,21 @@
+/**********************************
+ * COMMON
+ * utility
+ */
+
+ // % PROLEGOMENA % 
+ * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	-webkit-font-smoothing: antialiased;	// macOS
+	-moz-osx-font-smoothing: grayscale;		// cmacOS+FF
+	text-align: center;
+	background-color: $blue2;
+	color: $white;
+	font-size: 14px;
+	line-height: 1.6em;
+}

@@ -1,16 +1,21 @@
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+// %              COMPONENT: Answers            % 
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+// # COMPONENT BODY # 
 <template>
 	<div class="answers">
-		<!-- <h2>Answers:</h2> -->
 		<b-container>
 			<b-row class="ans_list">
 				<b-col class="ans_item" v-for="(answer,index) in answers" :key="answer" sm="6">
-					<div class="block">{{listHead[index]}}. {{ answer }}</div>
+					<div class="qa_block">{{listHead[index]}}. {{ answer }}</div>
 				</b-col>
 			</b-row>
 		</b-container>
 	</div>
 </template>
 
+// # SOCKETS & PLUGS # 
 <script>
 export default {
 	name: "Answers",
@@ -29,7 +34,7 @@ export default {
 	};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+// # COMPONENT STYLE MANAGEMENT # 
 <style scoped lang="scss">
 //
 </style>

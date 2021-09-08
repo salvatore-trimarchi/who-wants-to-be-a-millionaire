@@ -1,3 +1,8 @@
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+// %            ROOT COMPONENT: App             % 
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+// # COMPONENT BODY # 
 <template>
 	<div id="app">
 		<!-- <div id="nav">
@@ -8,46 +13,21 @@
 	</div>
 </template>
 
+// # SOCKETS & PLUGS # 
+<script>
+
+// * component socket: Home * //
+// router management
+
+// * component plug: App * //
+// router management
+
+</script>
+
+// # GENERAL STYLE MANAGEMENT # 
 <style lang="scss">
 
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-	}
-
-	#nav {
-		padding: 30px;
-
-		a {
-			font-weight: bold;
-			color: #2c3e50;
-
-			&.router-link-exact-active {
-			color: #42b983;
-			}
-		}
-	}
-
-	.block {
-		margin: 10px 0;
-		padding: 10px;
-		border: 1px solid black;
-		border-radius: 5px;
-	}
-
-	.container,
-	.question,
-	.answers {
-		// border: 1px solid red;
-	}
+// * MAIN STYLE * //
+@import "./assets/scss/app.scss"; 
 
 </style>

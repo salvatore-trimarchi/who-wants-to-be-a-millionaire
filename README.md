@@ -1,5 +1,12 @@
 # who-wants-to-be-a-millionaire
 
+
+vue/cli, vue-router, vuex
+sass
+axios
+bootstrap
+
+
 ## Project setup
 ```
 npm install

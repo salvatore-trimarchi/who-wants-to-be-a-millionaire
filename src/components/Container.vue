@@ -1,19 +1,28 @@
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+// %             COMPONENT: Container           % 
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+// # COMPONENT BODY # 
 <template>
-	<div class="container">
-		<h1 class="title">{{ containerMsg }}</h1>
-		<Question :question="randQuestionDisplay" />
-		<Answers :answers="randAnswerDisplay" />
+	<div class="qa_container">
+		<!-- <h1 class="title">{{ containerTitle }}</h1> -->
+		<div class="qa_box">
+			<Question :question="randQuestionDisplay" />
+			<Answers :answers="randAnswerDisplay" />
+		</div>
 	</div>
 </template>
 
+// # SOCKETS & PLUGS # 
 <script>
+
 import Question from "@/components/Question.vue";
 import Answers from "@/components/Answers.vue";
 
 export default {
 	name: "Container",
 	props: {
-		containerMsg: String,
+		containerTitle: String,
 	},
 	components: {
 		Question,
@@ -50,11 +59,10 @@ export default {
 		this.getRndQuestion();
 	},
 };
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+// # COMPONENT STYLE MANAGEMENT # 
 <style scoped lang="scss">
-	.title {
-		padding: 30px;
-	}
+//
 </style>
